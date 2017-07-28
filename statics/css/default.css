@@ -1,0 +1,97 @@
+/**Common Css*/
+.pull-right{
+	float:right !important;
+}
+.redColor{
+	color:#C40000 !important;
+}
+.inline-block{
+	display: inline-block;
+}
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+a.hover:{
+	text-decoration: none
+}
+
+/** topBanner */
+
+nav.topBanner a {
+	color : #999;
+	margin:0px 5px 0px 5px;
+}
+nav.topBanner span.glyphicon{
+	margin:0px 2px 0px 2px;
+}
+nav.topBanner a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+nav.topBanner{
+	background-color:#f2f2f2;
+	border-bottom: 1px solid #e2e2e2;
+	padding:5px 20px 5px 20px;
+
+}
+nav.topBanner>a.icon{
+	margin:0px 5px 0 5px;
+}
+nav.topBanner span.userName{
+	color : #999;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/**Search */
+
+#searchWrapper{
+	margin:10px auto 0px auto; 
+	text-align:center;
+}
+#searchWrapper a{
+	color:#999;	
+}
+#searchWrapper #searchInputDiv {
+	width:400px;
+	margin-left:100px;
+}
+#searchInputDiv .searchKeywordDiv{
+	background-color: #C40000; 
+	height:40px;
+	padding:2px;
+}
+#searchInputDiv input.searchKeyword{
+	width:275px;
+	height:36px;
+	outline: none;
+	border:2px solid transparent;
+}
+
+#searchInputDiv button.searchBtn{
+	width:110px;
+	background-color:#C40000;
+	outline: none;
+	border: 2px solid transparent;
+	height:36px;
+	color:#fff;
+	font-size:12px;
+	font-weight: bold;
+}
+
+#searchInputDiv .searchBelow {
+	margin-top: 5px
+	color:#999;
+}
+.searchBelow ul.searchShortcut {
+	list-style-type :none;
+}
+.searchBelow ul.searchShortcut li{
+	float: left;
+	padding-right:10px;
+	border-right:1px solid #999;
+}
+.searchBelow ul.searchShortcut li:nth-child(n+1){
+	margin-left:10px;
+}
