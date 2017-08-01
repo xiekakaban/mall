@@ -228,6 +228,12 @@ nav.topBanner span.userName{
 }
 #productItems .productsAsideCategorys{
 	display: none;
+	position: absolute;
+	height: 549px;
+	background-color: #fff;
+	width:830px;
+	left:200px;
+	top:0px;
 }
 #productItems>a.productItem:hover{
 	background-color: #fff;
@@ -244,6 +250,7 @@ nav.topBanner span.userName{
 }
 #hotProducts{
 	position: relative;
+	left:-100px;
 }
 #hotProducts>a.hotProductItem.active{
 	display: block;
@@ -256,6 +263,72 @@ nav.topBanner span.userName{
 	position: absolute;
 
 }
+.hotProductsRowWrapper{
+	border-bottom: 1px dashed #e7e7e7;
+	padding:10px 20px 10px 50px;
+}
+.hotProductsRowWrapper>span.hotRow{
+	color:#999;
+	font-size:14px;
+	padding-right: 8px;
+	padding-left:8px;
+}
+.hotProductsRowWrapper>span.hotRow.hotSale{
+	color:#C40000;
+}
+
+#suggestProducts{
+	margin:10px auto 0px auto;
+	width: 1024px;
+	background-color: #e8e8e8;
+	padding:20px 10px 10px 10px;
+}
+#suggestProducts span.categoryTitle{
+	display: block;
+	padding-left: 15px;
+	font-size: 16px;
+	border-left: 5px solid #19C8A9;
+}
+ul.suggestProduct{
+	display: block;
+	margin-top: 10px;
+}
+ul.suggestProduct li{
+	list-style-type:none;
+	display: inline-block;
+	margin: 8px 10px;
+	background-color: #fff;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	border:1px solid transparent;
+	text-align: center;
+	cursor: pointer;
+	width:227px;
+	height:;
+
+}
+ul.suggestProduct li:hover{
+	border:1px solid #C40000;
+}
+ul.suggestProduct li>img.prodImg{
+	width: 187px;
+    height: 190px;
+}
+   
+span.suggestProductName{
+	display: block;
+	padding:16px;
+	color:#666666;
+	height:60px;
+}
+span.suggestProductPrice{
+	display: block;
+	color: #FF003A;
+	font-size: 16px;
+	padding-left: 16px;
+}
+
+
 
 
 
