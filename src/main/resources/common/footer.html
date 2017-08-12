@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>文档标题</title>
-	<script src="../statics/js/jquery-3.2.1.min.js"></script>
-	<script src="../statics/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../statics/css/default.css">
-	<link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+	<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/default.css}">
 </head>
 <body>
 	<div style="height:1024px"></div>
 	<div id="footer">
 
 		<div id="footer_desc">
-			<img src="../statics/images/ensure.png" alt="ensure">
+			<img th:src="@{/images/ensure.png}" alt="ensure">
 		</div>
 		<div id="dlWrapper">
 				<dl>
@@ -42,7 +42,7 @@
 				</dl>
 				<dl>
 					<dt>手机天猫</dt>
-					<dd><a href="#"><img src="../statics/images/ma.png" alt=""></a></dd>
+					<dd><a href="#"><img th:src="@{/images/ma.png}" alt=""></a></dd>
 				</dl>
 		</div>
 
@@ -50,7 +50,7 @@
 
 		<div id="copyright">
 			<div class="copyrightMiddle">
-				<img src="../statics/images/cateye.png" alt="" id="cateye">
+				<img th:src="@{/images/cateye.png}" alt="" id="cateye">
 				<div id="innerLink" class="link">
 					<span>关于天猫</span>
 					<span>帮助中心</span>
@@ -90,8 +90,8 @@
 				</div>
 				<p class="copyrightYear">© 2003-2016 TMALL.COM 版权所有</p>
 				<span>
-					<img src="../statics/images/copyRight1.jpg" alt="">
-					<img src="../statics/images/copyRight2.jpg" alt="">
+					<img th:src="@{/images/copyRight1.jpg}" alt="">
+					<img th:src="@{/images/copyRight2.jpg}" alt="">
 				</span>
 			</div>
 		</div>

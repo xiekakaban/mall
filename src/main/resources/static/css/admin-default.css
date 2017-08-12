@@ -1,0 +1,61 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-size:14px;
+}
+a:hover{
+	text-decoration: none;
+}
+.floatLeft{
+	float: left;
+}
+.floatRight{
+	float: right;
+}
+
+/**admin Login*/
+.adminLogin{
+	width:350px;
+	margin: 200px auto 0px auto;
+	color: #73879C;
+	text-align: center;
+}
+.adminLogin>span.title{
+	display: inline-block;
+	font:400 25px Helvetica,Arial,sans-serif;
+	letter-spacing: -.05em;
+    line-height: 20px;
+    margin: 10px 0 30px;
+}
+span.splitLine{
+	display: inline-block;
+	background-color: #73879C;
+	height: 1px;
+	position: relative;
+	top:20px;
+}
+.adminLogin .input{
+	margin-top: 10px;
+}
+.adminLogin .submitWrapper{
+	margin-top: 15px;
+}
+.adminLogin .submitWrapper>a{
+	font-size: 12px;
+	margin: 0px 60px 0 10px;
+}
+.adminLogin .submitWrapper>a.reset_pass{
+	color: #999;
+	display: inline-block;
+}
+.adminLogin .submitWrapper>a.reset_pass:hover{
+	text-decoration: none;
+}
+p.copyRightInfo{
+	margin-top:25px;
+}
+p.copyRightInfo{
+	color:#999;
+}
+/** index **/
+

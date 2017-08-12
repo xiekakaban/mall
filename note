@@ -1,0 +1,14 @@
+/******************************SQL***********************************/
+database:dev_mall,prod_mall
+# tb-administrator:
+CREATE TABLE IF NOT EXISTS tb_administrator(
+	id VARCHAR(50) primary key,
+	username VARCHAR(100) not null unique,
+	avator VARCHAR(50) default 'default.jpg',
+	pwd VARCHAR(100) not null,
+	email VARCHAR(200),
+	phone VARCHAR(20),
+	externInfo text,
+	create_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
+insert into tb_administrator (id,username,pwd,email,phone) VALUES ('9527','supermall','XZxoxsUO09AqL89U9jmTtg==','ruantianbo@163.com','12345678910')

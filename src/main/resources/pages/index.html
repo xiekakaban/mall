@@ -3,12 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>文档标题</title>
-	<script src="../statics/js/jquery-3.2.1.min.js"></script>
-	<script src="../statics/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../statics/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../statics/css/default.css">
+	<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/default.css}">
 </head>
 <body>
+
+	<div th:replace="../common/topBanner :: .topBanner"></div>
+	<div th:replace="../common/search :: #searchWrapper"></div>
+	<div style="margin-top: 50px;"></div>
 	<div id="content">
 		<div id="categoryCarousel">
 			<div id="categoryBanner">
@@ -163,16 +167,16 @@
 				<div id="hotProducts">
 					<!-- a[href="#"].hotProductItem>div.hotProductItemWrapper>img[src="../statics/images/"]*4 -->
 					<a href="#" class="hotProductItem active">
-						<div class="hotProductItemWrapper"><img src="../statics/images/hot1.jpg" alt=""></div>
+						<div class="hotProductItemWrapper"><img th:src="@{/images/hot1.jpg}" alt=""></div>
 					</a>
 					<a href="#" class="hotProductItem unactive">
-						<div class="hotProductItemWrapper"><img src="../statics/images/hot2.jpg" alt=""></div>
+						<div class="hotProductItemWrapper"><img th:src="@{/images/hot2.jpg}" alt=""></div>
 					</a>
 					<a href="#" class="hotProductItem unactive">
-						<div class="hotProductItemWrapper"><img src="../statics/images/hot3.jpg" alt=""></div>
+						<div class="hotProductItemWrapper"><img th:src="@{images/hot3.jpg}" alt=""></div>
 					</a>
 					<a href="#" class="hotProductItem unactive">
-						<div class="hotProductItemWrapper"><img src="../statics/images/hot4.jpg" alt=""></div>
+						<div class="hotProductItemWrapper"><img th:src="@{images/hot4.jpg}" alt=""></div>
 					</a>
 				</div>
 			</div>
@@ -182,22 +186,22 @@
 			 	<span class="categoryTitle">平板电脑</span>
 		 		<ul class="suggestProduct">
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/632.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/632.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/654.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/654.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]普屏PANDA/熊猫LD39</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/4598.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/4598.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]MAXFEEL休闲男士手包真皮手拿包大容</span>
 		 				<span class="suggestProductPrice">799.2</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/5222.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/5222.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
@@ -207,22 +211,22 @@
 			 	<span class="categoryTitle">平板电脑</span>
 		 		<ul class="suggestProduct">
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/6442.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/6442.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">159.3</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/6453.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/6453.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">86</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/676.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/676.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">8786</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/654.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/654.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">789.25</span>
 		 			</li>
@@ -232,22 +236,22 @@
 			 	<span class="categoryTitle">平板电脑</span>
 		 		<ul class="suggestProduct">
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/632.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/632.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">86.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/3752.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/3752.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">78.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/4390.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/4390.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">4478.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/7036.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/7036.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">12344.25</span>
 		 			</li>
@@ -257,22 +261,22 @@
 			 	<span class="categoryTitle">平板电脑</span>
 		 		<ul class="suggestProduct">
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/6442.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/6442.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">123.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/7663.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/7663.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">58.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/7014.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/7014.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">87.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/643.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/643.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
@@ -282,22 +286,22 @@
 			 	<span class="categoryTitle">平板电脑</span>
 		 		<ul class="suggestProduct">
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/6453.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/6453.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/654.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/654.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/6442.jpg" alt="">
+		 				<img class="prodImg" th:src="@{images/6442.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
 		 			<li class="suggestProductDetail">
-		 				<img class="prodImg" src="../statics/images/7036.jpg" alt="">
+		 				<img class="prodImg" th:src="@{/images/7036.jpg}" alt="">
 		 				<span class="suggestProductName">[热销]夏普屏PANDA/熊猫LD39D71S</span>
 		 				<span class="suggestProductPrice">1874.25</span>
 		 			</li>
@@ -307,6 +311,7 @@
 		</div>
 		
 	</div>
+	<div th:replace="../common/footer :: #footer"></div>
 	<script>
 		$("#productItems a.productItem").on("mouseenter",function(){
 			clearProductsAsideCategorys();
