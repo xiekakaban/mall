@@ -2,33 +2,70 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>文档标题</title> 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css">
-    <script src="statics/js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="../../static/css/admin-default.css" th:href="@{/css/admin-default.css}">
+    <title>文档标题</title>
+    <script src="../../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+
+    <link href="../../static/css/admin-default.css" th:href="@{/css/admin-default.css}" rel="stylesheet" />
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="../../static/css/pe-icon-7-stroke.css" th:href="@{/css/pe-icon-7-stroke.css}" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link th:href="@{/css/light-bootstrap-dashboard.css}" rel="stylesheet"/>
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
 </head>
 <body style="background-color: #F7F7F7">
+
     <div class="adminLogin">
-        <form action="" method="POST">
+        <form th:action="@{/admin/login}" method="POST">
             <span class="splitLine floatLeft" style="width:80px;"></span>
             <span class="title">管理员登陆</span>
             <span class="splitLine floatRight" style="width:80px;"></span>
 
             <div class="input">
-                <input type="text" class="form-control" placeholder="用户名" required="">
+                <input type="text" name="username" class="form-control" placeholder="用户名" required="">
             </div>
 
             <div class="input">
-                <input type="password" class="form-control" placeholder="密码" required="">
+                <input type="password" name="pwd" class="form-control" placeholder="密码" required="">
             </div>
 
             <div class="submitWrapper">
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button class="btn btn-default submit" type="submit">Log in</button>
                 <a class="reset_pass" href="#">Create Admin</a>
             </div>
             <span class="splitLine" style="width:95%"></span>
             <p class="copyRightInfo">©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
         </form>
     </div>
+
 </body>
+<script th:src="@{/js/bootstrap.min.js}" src="../../static/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Notifications Plugin    -->
+<script th:src="@{/js/bootstrap-notify.js}" src="../../static/js/bootstrap-notify.js"></script>
+<script>
+
+    $(document).ready(function(){
+        notification();
+
+
+    })
+</script>
+<script th:inline="javascript">
+    function notification() {
+        if([[${loginCheck}]] != null){
+               $.notify({
+                   icon: 'pe-7s-door-lock',
+                   message: [[${loginCheck}]]
+               },{
+                   type: 'danger',
+                   timer: 3000
+               });
+           }
+    }
+
+</script>
+
 </html>

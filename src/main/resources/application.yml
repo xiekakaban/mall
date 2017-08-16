@@ -6,3 +6,8 @@ spring:
         mode: LEGACYHTML5
         prefix: classpath:/pages/
         suffix: .html
+  jpa:
+       properties:
+         hibernate:
+           dialect: org.hibernate.dialect.MySQL5Dialect
+       show-sql: true

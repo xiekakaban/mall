@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by e604845 on 8/12/2017.
  */
@@ -29,5 +31,15 @@ public class AdministratorServiceImpl implements AdministratorService {
             return administratorEntity;
         }
         return null;
+    }
+
+    @Override
+    public List<AdministratorEntity> findAll() {
+        return administratorRepository.findAll();
+    }
+
+    @Override
+    public AdministratorEntity findById(String identify) {
+        return administratorRepository.findOne(identify);
     }
 }

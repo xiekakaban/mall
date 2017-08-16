@@ -5,5 +5,5 @@ package com.statestr.mall.util;
  */
 public class Constants {
     // web
-    public static final String SESS_USER = "LoginUser";
+    public static final String ADMINSESS_USER = "AdminLoginUser";
 }

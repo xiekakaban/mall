@@ -1,4 +1,4 @@
-package com.statestr.mail.util.test;
+package com.statestr.mall.util.test;
 
 import com.statestr.mall.util.SecurityUtil;
 import org.junit.Test;
