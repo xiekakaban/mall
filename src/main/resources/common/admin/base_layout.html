@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>ss</title>
+    <title th:text="${title}"></title>
     <meta charset="utf-8" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -14,6 +14,7 @@
     <link href="../../static/css/pe-icon-7-stroke.css" th:href="@{/css/pe-icon-7-stroke.css}" rel="stylesheet" />
     <link href="../../static/css/light-bootstrap-dashboard.css" th:href="@{/css/light-bootstrap-dashboard.css}" rel="stylesheet" />
     <link href="../../static/css/demo.css" th:href="@{/css/demo.css}" rel="stylesheet" />
+
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'/>
 
@@ -34,6 +35,9 @@
 <script th:src="@{/js/light-bootstrap-dashboard.js}" src="../../static/js/light-bootstrap-dashboard.js"></script>
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script th:src="@{/js/demo.js}" src="../../static/js/demo.js"></script>
+
+<script th:src="@{/js/vue.min.js}" src="../../static/js/vue.min.js"></script>
+<script th:src="@{/js/admin-default.js}" src="../../static/js/admin-default.js"></script>
 
 <th:block layout:fragment="lastJs">
 

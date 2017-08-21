@@ -19,9 +19,11 @@ import javax.servlet.http.HttpServletRequest;
 @Aspect
 public class AdminAccessAspect extends AbstractAspect{
 
+    private static final Boolean ISDEV = Boolean.TRUE;
 
     @Before("adminLoginCheck()")
     public void adminLoginCheckBefore (JoinPoint joinPoint) throws NoPermissionException{
+
         HttpServletRequest request = getServletRequest();
         MethodSignature methodSignature = (MethodSignature)joinPoint.getSignature();
         AdminAuthorCheckAnnotation adminAuthorCheckAnnotation = methodSignature.getMethod().getAnnotation(AdminAuthorCheckAnnotation.class);

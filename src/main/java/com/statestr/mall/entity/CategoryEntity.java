@@ -1,5 +1,9 @@
 package com.statestr.mall.entity;
 
+import com.statestr.mall.annotation.ExcludeFromJson;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -8,6 +12,8 @@ import java.util.Set;
  * Created by e604845 on 8/16/2017.
  */
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name="tb_category")
 public class CategoryEntity extends AbstractEntity {
 
@@ -21,11 +27,12 @@ public class CategoryEntity extends AbstractEntity {
     @Column(name="banner")
     private String banner;
 
-    @ManyToOne
+
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="create_by",referencedColumnName = "id")
     private AdministratorEntity createBy;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "category",fetch = FetchType.EAGER)
     private Set<ProductProps> productProps;
 
     @Column(name="last_modify_time")

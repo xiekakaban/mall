@@ -1,4 +1,4 @@
-package com.statestr.mall.service.test;
+package com.statestr.mall;
 
 import com.statestr.mall.MallTestApplication;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=MallTestApplication.class)
-public class BaseServiceOOCTest {
+public class BaseOOCTest {
 
     @Test
     public void contextLoads() {

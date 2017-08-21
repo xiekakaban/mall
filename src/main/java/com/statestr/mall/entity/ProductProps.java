@@ -1,5 +1,8 @@
 package com.statestr.mall.entity;
 
+import com.statestr.mall.annotation.ExcludeFromJson;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -9,7 +12,10 @@ import java.util.Date;
  * Created by e604845 on 8/16/2017.
  */
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name="tb_product_prop")
+
 public class ProductProps extends AbstractEntity {
 
     @Id
@@ -33,6 +39,7 @@ public class ProductProps extends AbstractEntity {
     private Date lastModifyTime;
 
     @ManyToOne
+    @ExcludeFromJson
     @JoinColumn(name="category_id",referencedColumnName = "id")
     private CategoryEntity category;
 

@@ -1,0 +1,3 @@
+#Will  export PROCEDUREs, FUNCTIONs & TRIGGERs too, add --routines parameter:
+$mysqldump.exe --port=3369 -u root -p mall_dev --routines > c:\DevHome\project\mall\document\dumpsql\20170821.sql
+

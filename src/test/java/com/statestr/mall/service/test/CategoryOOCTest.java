@@ -1,5 +1,6 @@
 package com.statestr.mall.service.test;
 
+import com.statestr.mall.BaseOOCTest;
 import com.statestr.mall.entity.AdministratorEntity;
 import com.statestr.mall.entity.CategoryEntity;
 import com.statestr.mall.entity.ProductProps;
@@ -13,16 +14,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.servlet.ServletContext;
 import java.util.*;
 
 /**
  * Created by e604845 on 8/16/2017.
  */
-public class CategoryServiceOOCTest extends BaseServiceOOCTest {
-    private final static Logger logger = LoggerFactory.getLogger(CategoryServiceOOCTest.class);
+public class CategoryOOCTest extends BaseOOCTest {
+    private final static Logger logger = LoggerFactory.getLogger(CategoryOOCTest.class);
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private ServletContext servletContext;
+
 
     @Autowired
     @Qualifier("administratorService")
@@ -41,8 +47,14 @@ public class CategoryServiceOOCTest extends BaseServiceOOCTest {
         CategoryEntity cate = new CategoryEntity(GenerateId.generate(), "3K党", createBy, prodProps);
         p1.setCategory(cate);
         p2.setCategory(cate);
-        //cate.setProductProps(prodProps);
+        cate.setProductProps(prodProps);
         CategoryEntity c = categoryService.addCategory(cate);
         logger.info(c.getTitle());
+    }
+    @Test
+    public void testFindAll(){
+        logger.info(""+servletContext.getAttribute("CreateApplicationTime"));
+        List<CategoryEntity> categoryEntities = categoryService.findAll();
+        logger.info(""+categoryEntities.size());
     }
 }
