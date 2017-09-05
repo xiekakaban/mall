@@ -14,63 +14,152 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Striped Table with Hover</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">Category</h4>
+                                <p class="category">All category</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped" id="category-list">
                                     <thead>
                                     <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Salary</th>
-                                    <th>Country</th>
-                                    <th>City</th>
+                                    <th>Titlte</th>
+                                    <th>Banner</th>
+                                    <th>CreateTime</th>
+                                    <th>PropertiesSize</th>
+                                    <th>Operation</th>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                        <td>$36,738</td>
-                                        <td>Niger</td>
-                                        <td>Oud-Turnhout</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Minerva Hooper</td>
-                                        <td>$23,789</td>
-                                        <td>Curaao</td>
-                                        <td>Sinaai-Waas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Sage Rodriguez</td>
-                                        <td>$56,142</td>
-                                        <td>Netherlands</td>
-                                        <td>Baileux</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Philip Chaney</td>
-                                        <td>$38,735</td>
-                                        <td>Korea, South</td>
-                                        <td>Overland Park</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Doris Greene</td>
-                                        <td>$63,542</td>
-                                        <td>Malawi</td>
-                                        <td>Feldkirchen in </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Mason Porter</td>
-                                        <td>$78,615</td>
-                                        <td>Chile</td>
-                                        <td>Gloucester</td>
-                                    </tr>
+                                    <tbody v-for="category in allCategory">
+                                        <tr>
+                                            <td>{{category.id}}</td>
+                                            <td>{{category.title}}</td>
+                                            <td>{{category.banner}}</td>
+                                            <td>{{category.lastModifyTime}}</td>
+                                            <td>{{category.productProps.length}}</td>
+                                            <td>
+                                                <button class="btn btn-info btn-simple" rel="tooltip" title="" type="button" data-original-title="Edit Category">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-danger btn-simple" rel="tooltip" title="" type="button" data-original-title="Delete">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
+
+                                <nav aria-label="Page navigation" style="float: right;margin-right: 20px;margin-top: 20px;">
+                                        <ul class="pagination">
+                                            <li>
+                                                <a href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">«</span>
+                                                </a>
+                                            </li>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>
+                                                <a href="#" aria-label="Next">
+                                                    <span aria-hidden="true">»</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="addCategory">
+                        <form action="@{/admin/addCategory}" method="post" enctype="multipart/form-data">
+                        <div class="card">
+                            <div class="header">
+                                    <h4 class="title">Add Category</h4>
+                                <p class="category">will add the Category</p>
+                            </div>
+                            <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-6 categoryDet">
+                                            <input id="propertiesHidden" name="propertiesHidden">
+                                            <div class="categoryTitle input-group">
+                                                <span class="input-group-addon" id="category-title"><span class="glyphicon glyphicon-user"></span></span>
+                                                <input type="text" name="username" placeholder="类目名称" class="form-control" aria-describedby="category-title">
+                                            </div>
+
+                                            <div class="categoryBanner">
+                                                <input type="file" name="email" placeholder="横幅" class="form-control" id="addBannerImgInput" onchange="previewAddBanner(this)">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="categoryProperties input-group">
+                                                        <span class="input-group-addon" id="category-properties">
+                                                            <span class="glyphicon glyphicon-tags"></span>
+                                                        </span>
+                                                        <input type="text" name="email" placeholder="属性值" class="form-control" aria-describedby="category-properties">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="button" class="btn btn-primary">添加属性</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="bannerViewDet">
+                                                <a href="#" class="thumbnail">
+                                                    <img th:src="@{/img/2.jpg}" alt="banner" id="addBannerImgPreview" style="width: 336px;height: 56px;">
+                                                </a>
+                                            </div>
+                                            <div class="row" style="margin-top:35px;">
+                                                <div class="col-md-8">
+                                                    <div class="categoryEnumProperties input-group">
+                                                        <span class="input-group-addon" id="category-enumproperties">
+                                                            <span class="glyphicon glyphicon-list"></span>
+                                                        </span>
+                                                        <input type="text" name="email" placeholder="属性值约束" class="form-control" aria-describedby="category-enumproperties">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="button" class="btn btn-primary">属性值约束</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- 1 row end -->
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="category" style="margin-top: 20px;">属性</p>
+                                            <hr/>
+                                            <div class="bannerView">
+                                                <span class="label label-info prop"><span class="glyphicon glyphicon-remove"></span>款式</span><span class="label label-info prop"><span class="glyphicon glyphicon-remove"></span>Info</span><span class="label label-danger prop"><span class="glyphicon glyphicon-remove"></span>Info</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="category" style="margin-top: 20px;">枚举属性值</p><hr/>
+                                            <div class="bannerView">
+                                                <span class="label label-success  prop"><span class="glyphicon glyphicon-remove"></span>款式</span><span class="label label-success  prop"><span class="glyphicon glyphicon-remove"></span>Info</span><span class="label label-success  prop"><span class="glyphicon glyphicon-remove"></span>Info</span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- 2 row end -->
+
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" style="float:right;margin-right: 20px;">提交</button>
+                                        </div>
+                                    </div> <!-- 3 row -->
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Modify Category</h4>
+                                <p class="category">will Modify the Category</p>
+                            </div>
+                            <div class="content">
+                                modify
                             </div>
                         </div>
                     </div>
@@ -80,19 +169,28 @@
     </div>
 </div>
 <th:block layout:fragment="lastJs">
-    <script>
+    <script th:inline="javascript">
+
         var categorylistVM = new Vue({
             el: '#category-list',
             data: {
                 allCategory:[]
             },
             mounted: function(){
-                $ajaxJsonGet("@{/admin/find_all_category}",initAllCategory);
+                $ajaxJsonGet([[@{/admin/find_all_category}]],initAllCategory);
+            }
+        });
+
+        var addCategoryVM =  new Vue({
+            el: '#addCategory',
+            data:{
+                properties:{}
             }
         });
 
         function initAllCategory(data){
-
+            var categoryList = data.data;
+            categorylistVM.allCategory=categoryList;
         }
     </script>
 </th:block>

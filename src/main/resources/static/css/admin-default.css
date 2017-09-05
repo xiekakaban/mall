@@ -59,3 +59,27 @@ p.copyRightInfo{
 }
 /** index **/
 
+
+/**category*/
+#category-list td{
+	padding: 2px;
+	padding-left: 20px;
+}
+.categoryBanner{
+	margin-top: 35px;
+}
+span.prop{
+	pading:5px 10px 5px 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right:10px;
+}
+.bannerViewDet{
+	min-height: 66px;
+}
+.categoryDet>div:nth-child(n+2){
+	margin-top: 10px;
+}
+.bannerView span.glyphicon-remove{
+	cursor: pointer;
+}
